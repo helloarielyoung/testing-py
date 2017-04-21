@@ -22,9 +22,27 @@ def is_mel(name, email):
     >>> is_mel('Mel Melitpolski', 'Balloonicorn@ubermelon.com')
     True
 
-    """
+    >>> is_mel('Mel', 'Balloonicorn@ubermelon.com')
+    True
 
-    return name == "Mel Melitpolski" or email == "mel@ubermelon.com"
+    >>> is_mel('Joe Icognito', 'MEL@ubermelon.com')
+    True
+
+    >>> is_mel('mel melitpolski', 'mel@ubermelon.com')
+    True
+
+
+    """
+    #if name contains in any form "mel"
+    test_name = name.lower()
+    test_email = email.lower()
+
+    if "mel" == test_name or "mel melitpolski" == test_name or "mel@ubermelon.com" in test_email:
+        return True
+    else:
+        return False
+
+#    return name == "Mel Melitpolski" or email == "mel@ubermelon.com"
 
 
 def most_and_least_common_type(treats):
